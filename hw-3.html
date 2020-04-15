@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="index.js"></script> 
+    <link href="./fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="post.css">
+    <title>BEAUTE</title>
+</head>
+<body onload="initFavoritesSlider(); initSwipeSlider();">
+    <nav>
+        <a href="index.html" class="logo">BEAUTE</a>
+        <a href="#">
+            <hr>
+        </a>
+        <a href="#" id="nav-link-1" class="dropbtn">
+            HEALTH + WELLNESS
+        </a>
+        <div class="dropdown-content">
+            <a href="hw-1.html" class="card p-0">
+                <img src="images/card-hw-1.jpg">
+                <div class="card-text">
+                    THE TOP FOODS to<br> Help You Stay Hydrated
+                </div>
+            </a>
+            <a href="hw-2.html" class="card p-0">
+                <img src="images/card-hw-2.jpg">
+                <div class="card-text">
+                    Why You Should Be EATING THESE HEALTHY FATS
+                </div>
+            </a>
+            <a href="hw-3.html" class="card p-0">
+                <img src="images/card-hw-3.jpg">
+                <div class="card-text">
+                    How to Create<br> HEALTHY HABITS
+                </div>
+            </a>
+        </div>
+        <a href="#" id="nav-link-2" class="dropbtn">LIFESTYLE</a>
+        <div class="dropdown-content">
+            <a href="ls-1.html" class="card p-0">
+                <img src="images/card-ls-1.jpg">
+                <div class="card-text">
+                    The 10 Items Every Adult<br> Should HAVE IN THEIR CLOSET
+                </div>
+            </a>
+            <a href="ls-2.html" class="card p-0" >
+                <img src="images/card-ls-2.jpg">
+                <div class="card-text">
+                    A GUIDE TO YOUR Skincare Product's Shelf Life
+                </div>
+            </a>
+            <a href="ls-1.html" class="card p-0" style="visibility: hidden;">
+                <img src="images/card-ls-1.jpg">
+                <div class="card-text">
+                    The 10 Items Every Adult<br> Should HAVE IN THEIR CLOSET
+                </div>
+            </a>
+        </div>
+        <a href="#" id="nav-link-3" class="dropbtn">HOME + ENTERTAINING</a>
+        <div class="dropdown-content">
+            <a href="he-1.html" class="card p-0">
+                <img src="images/card-he-1.jpg">
+                <div class="card-text">
+                    Your Playlist For <br>A GOOD NIGHT SLEEP
+                </div>
+            </a>
+            <a href="he-2.html" class="card p-0">
+                <img src="images/card-he-2.jpg">
+                <div class="card-text">
+                    Your Holiday 
+                    <br>
+                    MOVIE GUIDE
+                </div>
+            </a>
+            <a href="he-3.html" class="card p-0">
+                <img src="images/card-he-3.jpg">
+                <div class="card-text">
+                    How To Choose Your <br>PLANT - BASED MILK
+                </div>
+            </a>
+        </div>
+        <a href="#" class="search" onclick="toggleSearchBar()"><i class="fas fa-search"></i></a>
+        <div class="search-bar">
+            <div class="input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+    </nav>
+    <div class="hamburger">
+        <i class="fas fa-bars" id="hamburger-toggle" onclick="toggleHamburger()"></i>
+        <a href="index.html">HOME</a>
+        <div class="hamburger-content">
+            <details>
+                <summary>
+                    HEALTH + WELLNESS 
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <ul>
+                    <li><a href="hw-1.html">
+                        THE TOP FOODS to Help You Stay Hydrated
+                    </a></li>
+                    <li><a href="hw-2.html">
+                        Why You Should Be EATING THESE HEALTHY FATS
+                    </a></li>
+                    <li><a href="hw-3.html">
+                        How to Create HEALTHY HABITS
+                    </a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>
+                    LIFESTYLE
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <ul>
+                    <li><a href="ls-1.html">
+                        The 10 Items Every Adult Should HAVE IN THEIR CLOSET
+                    </a></li>
+                    <li><a href="ls-2.html">
+                        A GUIDE TO YOUR Skincare Product's Shelf Life
+                    </a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>
+                    HOME + ENTERTAINING
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <ul>
+                    <li><a href="he-1.html">
+                        Your Playlist For A GOOD NIGHT SLEEP
+                    </a></li>
+                    <li><a href="he-2.html">
+                        Your Holiday MOVIE GUIDE
+                    </a></li>
+                    <li><a href="he-3.html">
+                        How To Choose Your PLANT - BASED MILK
+                    </a></li>
+                </ul>
+            </details>
+            <div class="input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text">
+            </div>
+        </div>
+    </div>
+    <div class="background-white pt-7"></div>
+    <div class="title-bar">
+        <div class="mobile-image flex-1 background-hint-of-red article-sign-up border-bottom-1px-solid-black">
+            <div class="px-10">
+                <h3>GIVE YOUR INBOX AND YOUR <br>LIFE <i>the Beaute it needs.</i></h3>
+                <input placeholder="EMAIL ADDRESS">
+                <h5 onclick="toggleArticleSignUp()">SIGN UP</h5>
+            </div>
+            <div class="modal top-0 article-signup-modal" onclick="toggleArticleSignUp()">
+                <div class="sign-up-container-modal-outer" style="background: none;">
+                    <h1 class="text-align-center">THANK YOU</h1>
+                </div>
+            </div>
+        </div>
+        <h4>HEALTH + WELLNESS</h4>
+        <div class="pb-25px flex-1">
+            <h1 class="color-article-magenta"><i>How to Create</i><br>HEALTHY HABITS</h1>
+            <small>BY ERICA SPIEGELMAN</small>
+        </div>
+        <div class="web-image flex-1 background-hint-of-red article-sign-up border-left-1px-solid-black">
+            <div class="px-10">
+                <h3>GIVE YOUR INBOX AND YOUR <br>LIFE <i>the Beaute it needs.</i></h3>
+                <input placeholder="EMAIL ADDRESS">
+                <h5 onclick="toggleArticleSignUp()">SIGN UP</h5>
+            </div>
+            <div class="modal top-0 article-signup-modal" onclick="toggleArticleSignUp()">
+                <div class="sign-up-container-modal-outer" style="background: none;">
+                    <h1 class="text-align-center">THANK YOU</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <img src="images/hw-3.jpg" class="image-stretch">
+        <h1 class="color-article-magenta left-heading font-weight-normal article-quote"><i>“Rewire in the right direction”</i></h1>
+        <p>You know that making healthy choices can help you feel better and live longer. Maybe you’ve already tried to eat healthier, get more exercise or sleep, quit smoking, cut back on drinking, or reduce stress. It’s not easy, but you can boost your ability to create and sustain a healthy lifestyle by being aware of your habits first, and then assessing which ones you want to change.</p>
+        <p>In my book, The Rewired Life, I discuss how to create healthy habits and increase self-care for the mind, body, and spirit. What I came to find out was this: no one is hard-wired, and everyone can create new habits at any given time. You just have to be consistent to let the pathways in your brain rewire in healthy directions. </p>
+        <p>Here are some ways you can start creating healthier habits today:</p>
+        <p><b class="color-article-magenta">-Plan.</b> Identify unhealthy patterns and triggers. Set realistic goals. Write down steps to help you achieve them. The more specific the better. Buy a planner or create a day-to-day schedule. </p>
+        <p><b class="color-article-magenta">-Change your surroundings.</b> Find ways to make healthy, easy choices. Remove temptations. Examine who is in your life. Do they have beneficial habits? Do they have a negative influence on you? Try to surround yourself with positive people who will support your new habit. </p>
+    </div>
+
+    <div class="p-25px background-white also-reads-outer-padding">
+        <div class="also-reads">
+            <div class="p-25px also-reads-outer-padding">
+                <h4 class="also-reads-title">ALSO READS</h4>
+                <div class="pl-75px pr-75px p-0-mobile">
+                    <div class="flex-container">
+                        <div class="flex-container  align-item-center web-image">
+                            <a href="he-1.html">
+                                <div class="position-relative image-caption"> 
+                                    <img src="images/square-he-1.jpg" class="image-fluid">
+                                    <h4>Read More</h4>
+                                </div>
+                            </a>
+                            <a href="he-1.html" class="block-container pl-4 pb-25px">
+                                <h4>HOME + ENTERTAINING</h4>
+                                <p>Your Playlist For a Good Night Sleep</p>
+                            </a>
+                        </div>
+                        <div class="flex-container  align-item-center also-reads-article-container">
+                            <a href="hw-2.html">
+                                <div class="position-relative image-caption"> 
+                                    <img src="images/square-hw-2.jpg" class="image-fluid">
+                                    <h4>Read More</h4>
+                                </div>
+                            </a>
+                            <a href="hw-2.html" class="block-container pl-4 pb-25px also-reads-text">
+                                <h4>HOME + ENTERTAINING</h4>
+                                <p>Why You Should Be Eating These Healthy Fats</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="article">
+        <p><b class="color-article-magenta">-Ask for support.</b> Find friends, family, coworkers, neighbors, or groups for support, or ask people to join you. Being held accountable is great when trying to create better practices. A workout buddy or therapist who can check in with you on your goals is always helpful.</p>
+        <p><b class="color-article-magenta">-Fill your time with healthy activities.</b> Try exercise, a favorite hobby, being artistic, puzzles, reading, hiking, or spending time with family and friends.</p>
+        <p><b class="color-article-magenta">-Track your progress.</b> Record how things are going to help you stay focused and catch slip-ups. Journaling is a perfect way to see your progress. We forget things day to day, and writing everything down helps.</p>
+        <p><b class="color-article-magenta">-Imagine the future.</b> Think about future benefits to stay on track. Play out the tape. Envision your goal daily. (I just had a baby and am envisioning getting into my old jeans—yay!)</p>
+        <p><b class="color-article-magenta">-Reward yourself.</b> Give yourself a nice reward when you’ve achieved a small goal or milestone, like getting a massage or scheduling some “me” time. Stay home and binge your favorite Netflix show or buy concert tickets for your favorite band (once quarantine is over, of course). There are so many fun and creative ways to reward ourselves.</p>
+        <p><b class="color-article-magenta">-Be patient.</b> Most importantly, remember that improvement takes time, and setbacks happen. Focus on progress, not perfection! </p>
+        <div class="clothes-article-title-container color-article-magenta w-90" style="text-align: center;">
+            <h1 style="padding: 0;" class="patience-is">
+                "Patience is more than simply learning to wait. It is having learned what is worth your time."
+            </h1>
+        </div>
+    
+    </div>
+
+    <div class="px-75px background-hint-of-red pb-50px pt-25px border-top-1px-solid-black more-from-header-container">
+        <div class="flex-container align-item-end">
+            <div class="block-container">
+                <h1 class="more-from-header">MORE FROM BEAUTE</h1>
+                
+                <a href="ls-2.html">
+                    <div class="position-relative image-caption">
+                        <img class="image-fluid web-image" src="images/square-ls-2.jpg">
+                        <h4>Read More</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="block-container pl-4 web-image more-from-text-container">
+                <a href="ls-2.html">
+                    <h3>LIFE + STYLE</h3>
+                    <h2>A GUIDE TO YOUR Skincare<br><i>Product's Shelf Life</i></h2>
+                    <h4>Literally.. Stay FRESH.</h4>
+                </a>
+                <br>
+                <div class="flex-container">
+                    <small class="post-share">SHARE</small>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-square"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pr-75px background-hint-of-red border-top-1px-solid-black pl-25px more-from-container border-top-2px-solid-white-mobile">
+        <div class="flex-container post-container">
+            <div class="flex-container pb-50px pt-25px align-item-end border-right-1px-solid-black pl-50px more-from-container">
+                <a href="he-3.html">
+                    <div class="position-relative image-caption"> 
+                        <img src="images/square-he-3.jpg" class="image-fluid">
+                        <h4>Read More</h4>
+                    </div>
+                </a>
+                <div class="block-container pl-4 more-from-text-container">
+                    <a href="he-3.html">
+                        <h3>HOME + ENTERTAINING</h3>
+                        <h2><i>How To Choose Your</i><br>PLANT - BASED MILK</h2>
+                        <h4>Plus, three unexpected recipes</h4>
+                    </a>
+                    <br>
+                    <div class="flex-container">
+                        <small class="post-share">SHARE</small>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-facebook-square"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-container pb-50px pt-25px align-item-end pl-50px more-from-container">
+                <a href="he-2.html">
+                    <div class="position-relative image-caption"> 
+                        <img src="images/square-he-2.jpg" class="image-fluid">
+                        <h4>Read More</h4>
+                    </div>
+                </a>
+                <div class="block-container pl-4 more-from-text-container">
+                    <a href="he-2.html">
+                        <h3>HOME + ENTERTAINING</h3>
+                        <h2><i>Your Holiday<br></i>MOVIE GUIDE</h2>
+                        <h4>Team Beaute Shares Their<br> Favorite Films</h4>
+                    </a>
+                    <br>
+                    <div class="flex-container">
+                        <small class="post-share">SHARE</small>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-facebook-square"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="web-footer">
+        <div class="flex-container pl-75px">
+            <ul>
+                <li><strong>CONTACT US</strong></li>
+                <li>+62 8117 2098</li>
+                <li>Beaute@gmail.com</li>
+            </ul>
+            
+            <ul>
+                <li><strong>ABOUT</strong></li>
+                <li>Our Philosophy</li>
+            </ul>
+        </div>
+        <a href="/index.html" class="logo">
+            BEAUTE
+        </a>
+        <div class="flex-container social-media-container">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-square"></i>
+        </div>
+    </footer>
+    <footer class="mobile-footer">
+        <a href="/index.html" class="logo">
+            BEAUTE
+        </a>
+        <div class="flex-container social-media-container">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-square"></i>
+        </div>
+        <div>
+            <ul>
+                <li><strong>ABOUT</strong></li>
+                <li>Our Philosophy</li>
+            </ul>
+            <ul>
+                <li><strong>CONTACT US</strong></li>
+                <li>+62 8117 2098</li>
+                <li>Beaute@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

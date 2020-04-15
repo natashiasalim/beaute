@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="index.js"></script> 
+    <link href="./fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="post.css">
+    <title>BEAUTE</title>
+</head>
+<body onload="initFavoritesSlider(); initSwipeSlider();">
+    <nav>
+        <a href="index.html" class="logo">BEAUTE</a>
+        <a href="#">
+            <hr>
+        </a>
+        <a href="#" id="nav-link-1" class="dropbtn">
+            HEALTH + WELLNESS
+        </a>
+        <div class="dropdown-content">
+            <a href="hw-1.html" class="card p-0">
+                <img src="images/card-hw-1.jpg">
+                <div class="card-text">
+                    THE TOP FOODS to<br> Help You Stay Hydrated
+                </div>
+            </a>
+            <a href="hw-2.html" class="card p-0">
+                <img src="images/card-hw-2.jpg">
+                <div class="card-text">
+                    Why You Should Be EATING THESE HEALTHY FATS
+                </div>
+            </a>
+            <a href="hw-3.html" class="card p-0">
+                <img src="images/card-hw-3.jpg">
+                <div class="card-text">
+                    How to Create<br> HEALTHY HABITS
+                </div>
+            </a>
+        </div>
+        <a href="#" id="nav-link-2" class="dropbtn">LIFESTYLE</a>
+        <div class="dropdown-content">
+            <a href="ls-1.html" class="card p-0">
+                <img src="images/card-ls-1.jpg">
+                <div class="card-text">
+                    The 10 Items Every Adult<br> Should HAVE IN THEIR CLOSET
+                </div>
+            </a>
+            <a href="ls-2.html" class="card p-0" >
+                <img src="images/card-ls-2.jpg">
+                <div class="card-text">
+                    A GUIDE TO YOUR Skincare Product's Shelf Life
+                </div>
+            </a>
+            <a href="ls-1.html" class="card p-0" style="visibility: hidden;">
+                <img src="images/card-ls-1.jpg">
+                <div class="card-text">
+                    The 10 Items Every Adult<br> Should HAVE IN THEIR CLOSET
+                </div>
+            </a>
+        </div>
+        <a href="#" id="nav-link-3" class="dropbtn">HOME + ENTERTAINING</a>
+        <div class="dropdown-content">
+            <a href="he-1.html" class="card p-0">
+                <img src="images/card-he-1.jpg">
+                <div class="card-text">
+                    Your Playlist For <br>A GOOD NIGHT SLEEP
+                </div>
+            </a>
+            <a href="he-2.html" class="card p-0">
+                <img src="images/card-he-2.jpg">
+                <div class="card-text">
+                    Your Holiday 
+                    <br>
+                    MOVIE GUIDE
+                </div>
+            </a>
+            <a href="he-3.html" class="card p-0">
+                <img src="images/card-he-3.jpg">
+                <div class="card-text">
+                    How To Choose Your <br>PLANT - BASED MILK
+                </div>
+            </a>
+        </div>
+        <a href="#" class="search" onclick="toggleSearchBar()"><i class="fas fa-search"></i></a>
+        <div class="search-bar">
+            <div class="input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+    </nav>
+    <div class="hamburger">
+        <i class="fas fa-bars" id="hamburger-toggle" onclick="toggleHamburger()"></i>
+        <a href="index.html">HOME</a>
+        <div class="hamburger-content">
+            <details>
+                <summary>
+                    HEALTH + WELLNESS 
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <ul>
+                    <li><a href="hw-1.html">
+                        THE TOP FOODS to Help You Stay Hydrated
+                    </a></li>
+                    <li><a href="hw-2.html">
+                        Why You Should Be EATING THESE HEALTHY FATS
+                    </a></li>
+                    <li><a href="hw-3.html">
+                        How to Create HEALTHY HABITS
+                    </a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>
+                    LIFESTYLE
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <ul>
+                    <li><a href="ls-1.html">
+                        The 10 Items Every Adult Should HAVE IN THEIR CLOSET
+                    </a></li>
+                    <li><a href="ls-2.html">
+                        A GUIDE TO YOUR Skincare Product's Shelf Life
+                    </a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>
+                    HOME + ENTERTAINING
+                    <i class="fas fa-chevron-down"></i>
+                </summary>
+                <ul>
+                    <li><a href="he-1.html">
+                        Your Playlist For A GOOD NIGHT SLEEP
+                    </a></li>
+                    <li><a href="he-2.html">
+                        Your Holiday MOVIE GUIDE
+                    </a></li>
+                    <li><a href="he-3.html">
+                        How To Choose Your PLANT - BASED MILK
+                    </a></li>
+                </ul>
+            </details>
+            <div class="input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text">
+            </div>
+        </div>
+    </div>
+    <div class="background-white pt-7"></div>
+    <div class="title-bar">
+        <div class="mobile-image flex-1 background-hint-of-red article-sign-up border-bottom-1px-solid-black">
+            <div class="px-10">
+                <h3>GIVE YOUR INBOX AND YOUR <br>LIFE <i>the Beaute it needs.</i></h3>
+                <input placeholder="EMAIL ADDRESS">
+                <h5 onclick="toggleArticleSignUp()">SIGN UP</h5>
+            </div>
+            <div class="modal top-0 article-signup-modal" onclick="toggleArticleSignUp()">
+                <div class="sign-up-container-modal-outer" style="background: none;">
+                    <h1 class="text-align-center">THANK YOU</h1>
+                </div>
+            </div>
+        </div>
+        <h4>HOME + ENTERTAINING</h4>
+        <div class="pb-25px flex-1">
+            <h1 class="color-article-green"><i>How To Choose Your</i><br>PLANT - BASED MILK</h1>
+            <small>BY BEAUTE</small>
+        </div>
+        <div class="web-image flex-1 background-hint-of-red article-sign-up border-left-1px-solid-black">
+            <div class="px-10">
+                <h3>GIVE YOUR INBOX AND YOUR <br>LIFE <i>the Beaute it needs.</i></h3>
+                <input placeholder="EMAIL ADDRESS">
+                <h5 onclick="toggleArticleSignUp()">SIGN UP</h5>
+            </div>
+            <div class="modal top-0 article-signup-modal" onclick="toggleArticleSignUp()">
+                <div class="sign-up-container-modal-outer" style="background: none;">
+                    <h1 class="text-align-center">THANK YOU</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <img src="images/he-3.jpg">
+        <h1 class="color-article-green font-weight-normal article-quote"><i>With three unexpected recipes</i></h1>
+        <p>Not sure which type of milk is best for you? Or simply curious about the major health benefits of different types of milk? The breakfast drink has come a long way since most of us were children and drinking a daily glass of skim or 2% milk. Now when you walk through the milk aisle at the grocery store, there are shelves upon shelves of dairy and non-dairy options.</p>
+        <p>We partnered with Elmhurst, a clean plant-based company that delivers simpler, better nutrition, made with more nut, grain, or seed sources and fewer ingredients (its unsweetened nut milks have just two). Elmhurst milk has up to four times more nuts per serving in its nut milks than other plant-based milks on the market. We also love Elmhurst’s commitment to sustainability and saving our water and land resources—as well as reducing emissions—by making the most of plants. All Elmhurst products are Non-GMO Project Verified, vegan, gluten-free, and of course, dairy-free. The brand never uses any gums, added oils, emulsifiers, or stabilizers in its products. Today we’re sharing five unexpected ways to incorporate their milks into your next meal.</p>
+        <p>Now more than ever, it’s important to consider the shelf life of the products you’re buying for your household. Elmhurst’s plant-based milks not only have major health benefits; they also last longer at room temperature than traditional milk with a 6- to 10-month shelf-life. This advantage is courtesy of innovative aseptic technology and packaging (and has nothing to do with added preservatives, to be clear). This means you can rest assured that your family is stocked with nutrient-packed essentials, and you don’t have to worry about refrigerating until they’ve been opened.</p>
+        <p>Below we’re breaking down the perks of using Elmhurst’s plant-based milks, plus a unique recipe for each.</p>
+    </div>
+
+    <div class="p-25px background-white also-reads-outer-padding">
+        <div class="also-reads">
+            <div class="p-25px also-reads-outer-padding">
+                <h4 class="also-reads-title">ALSO READS</h4>
+                <div class="pl-75px pr-75px p-0-mobile">
+                    <div class="flex-container">
+                        <div class="flex-container  align-item-center web-image">
+                            <a href="hw-3.html">
+                                <div class="position-relative image-caption"> 
+                                    <img src="images/square-hw-3.jpg" class="image-fluid">
+                                    <h4>Read More</h4>
+                                </div>
+                            </a>
+                            <a href="hw-3.html" class="block-container pl-4 pb-25px">
+                                <h4>HEALTH + WELLNESS</h4>
+                                <p>How to Create Healthy Habits</p>
+                            </a>
+                        </div>
+                        <div class="flex-container  align-item-center also-reads-article-container">
+                            <a href="he-2.html">
+                                <div class="position-relative image-caption"> 
+                                    <img src="images/square-he-2.jpg" class="image-fluid">
+                                    <h4>Read More</h4>
+                                </div>
+                            </a>
+                            <a href="he-2.html" class="block-container pl-4 pb-25px also-reads-text">
+                                <h4>HOME + ENTERTAINING</h4>
+                                <p>Your Holiday Move Guide</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <hr class="color-article-hr">
+        <div class="clothes-article-title-container">
+            <i class="clothes-article-title">1. UNSWEETENED ALMOND</i>
+        </div>
+        <hr class="color-article-hr">
+
+        <div class="article-container-right post-container">
+            <div>
+                <img src="images/he-3/unsweetened almond.png" class="article-top-right movie-image">
+            </div>
+            <div class="p-25px">
+                <div class="background-article-pink p-25px center-vertical center-vertical-mobile">
+                    <b>Key Benefits:</b>
+                    <p class="mt-0">Made with two ingredients—almonds and water. Low in carbs, high in fat and protein (5g protein per serving). Rich in vitamin E and healthy source of potassium.</p>
+                    <b>Great for everyday use in:</b>
+                    <p class="mt-0">smoothies and cereal (hot and cold)</p>
+                    <b>Unique recipe to try:</b>
+                    <p class="mt-0">Easy Cauliflower Alfredo</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="clothes-article-title-container">
+            <span class="clothes-article-title">&#111; RECIPES: Easy Cauliflower Alfredo </span>
+        </div>
+        <hr>     
+
+        <hr>
+        <div class="clothes-article-title-container">
+            <small class="clothes-article-title-small">Serving Size: </small>
+            <span class="clothes-article-title-small">MAKE ABOUT 5 CUPS</span>
+        </div>
+        <hr class="mb-0">
+        
+        <div class="clothes-article-title-container">
+            <div class="flex-container post-container">
+                <div class="">
+                    <div>
+                        <img src="images/he-3/Cauliflower alfredo.jpg">
+                        <p><strong>Ingredients : </strong></p>
+                        <p>
+                            1 cup Elmhurst Unsweetened Milked Almonds<br>
+                            4 cups cauliflower florets<br>
+                            2 cups vegetable stock<br>
+                            1/2 tablespoon olive oil<br>
+                            1 tablespoon garlic, minced<br>
+                            1/4 cup nutritional yeast<br>
+                            1 tablespoon lemon juice, fresh<br>
+                            1/2 teaspoon onion powder<br>
+                            Optional salt and pepper to taste 
+                        </p>
+                    </div>
+                </div>
+                <div class="pl-25px p-0-mobile border-left-1px-solid-black border-none-mobile">
+                    <hr class="mobile-image">
+                    <div>
+                        <p><strong>Instructions :</strong></p>
+                        <ol>
+                            <li class="color-light-grey"><p> In a large pot, add cauliflower florets and cover with vegetable stock. Bring to soft boil. Once the stock is boiling, cook for an additional 3 to 7 minutes until fork tender. Drain and set aside.</p></li>
+                            <li class="color-light-grey"><p>Next add oil in a separate pan and sauté minced garlic over low heat for about 5 minutes until soft and fragrant, being careful not to burn. Then add in the Elmhurst Unsweetened Almond Milk, cooked cauliflower, lemon juice, nutritional yeast, onion powder, garlic powder, salt, and pepper. Simmer for about 5 to 10 minutes.</p></li>
+                            <li class="color-light-grey"><p>Let cool slightly. If using an immersion blender or regular blender, puree the sauce until a smooth consistency is reached. Transfer mixture back to the pot and combine cooked pasta until heated through for about 5 minutes.</p></li>
+                            <li class="color-light-grey"><p>Serve warm and enjoy. </p></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="mt-0">
+        <hr>
+        <div class="pt-75px"></div>
+        <hr class="color-article-hr">
+        <div class="clothes-article-title-container">
+            <i class="clothes-article-title">2. UNSWEETENED CASHEW</i>
+        </div>
+        <hr class="color-article-hr">
+
+        <div class="article-container-right post-container">
+            <div>
+                <img src="images/he-3/unsweetend cashew.png" class="article-top-right movie-image">
+            </div>
+            <div class="p-25px">
+                <div class="background-article-pink p-25px center-vertical center-vertical-mobile">
+                    <b>Key Benefits:</b>
+                    <p class="mt-0">Helps reduce the risk of cardiovascular disease, supports bone health, assists in vision preservation, and aids in obesity prevention.</p>
+                    <b>Great for everyday use in:</b>
+                    <p class="mt-0">coffee, soups, and sauces</p>
+                    <b>Unique recipe to try:</b>
+                    <p class="mt-0">Avocado Lime Salad Dressing</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="clothes-article-title-container">
+            <span class="clothes-article-title">&#111; RECIPES: Avocado Lime Salad Dressing</span>
+        </div>
+        <hr>     
+
+        <hr>
+        <div class="clothes-article-title-container">
+            <small class="clothes-article-title-small">Serving Size: </small>
+            <span class="clothes-article-title-small">MAKE ABOUT 6 SERVINGS</span>
+        </div>
+        <hr class="mb-0">
+        
+        <div class="clothes-article-title-container">
+            <div class="flex-container post-container">
+                <div class="border-right-1px-solid-black  border-none-mobile">
+                    <div>
+                        <img src="images/he-3/Avocado Lime Salad Dressing.jpg">
+                        <p><strong>Ingredients : </strong></p>
+                        <p>
+                            1 cup Elmhurst Unsweetened Milked Cashews<br>
+                            1/2 cup lime juice4 tablespoons cilantro, chopped<br>
+                            1/2 teaspoon garlic<br>
+                            1 cup avocadoSalt and pepper to taste 
+                        </p>
+                    </div>
+                </div>
+                <div class="pl-25px p-0-mobile">
+                    <hr class="mobile-image">
+                    <div>
+                        <p><strong>Instructions :</strong></p>
+                        <ol>
+                            <li class="color-light-grey"><p>Add Elmhurst Unsweetened Cashew Milk, lime juice, chopped cilantro, garlic, avocado, and salt and pepper to taste to a blender.</p></li>
+                            <li class="color-light-grey"><p>Blend until smooth and creamy or you reach your desired consistency. Serve and enjoy.</p></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="mt-0">
+        <hr>
+    </div>
+
+    <div class="p-25px background-white also-reads-outer-padding">
+        <div class="also-reads">
+            <div class="p-25px also-reads-outer-padding">
+                <h4 class="also-reads-title">ALSO READS</h4>
+                <div class="pl-75px pr-75px p-0-mobile">
+                    <div class="flex-container">
+                        <div class="flex-container  align-item-center web-image">
+                            <a href="he-1.html">
+                                <div class="position-relative image-caption"> 
+                                    <img src="images/square-he-1.jpg" class="image-fluid">
+                                    <h4>Read More</h4>
+                                </div>
+                            </a>
+                            <a href="he-1.html" class="block-container pl-4 pb-25px">
+                                <h4>HOME + ENTERTAINING</h4>
+                                <p>Your Playlist For a Good Night Sleep</p>
+                            </a>
+                        </div>
+                        <div class="flex-container  align-item-center also-reads-article-container">
+                            <a href="hw-2.html">
+                                <div class="position-relative image-caption"> 
+                                    <img src="images/square-hw-2.jpg" class="image-fluid">
+                                    <h4>Read More</h4>
+                                </div>
+                            </a>
+                            <a href="hw-2.html" class="block-container pl-4 pb-25px also-reads-text">
+                                <h4>HOME + ENTERTAINING</h4>
+                                <p>Why You Should Be Eating These Healthy Fats</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="article">
+        <hr class="color-article-hr">
+        <div class="clothes-article-title-container">
+            <i class="clothes-article-title">3. UNSWEETENED HAZELNUT</i>
+        </div>
+        <hr class="color-article-hr">
+
+        <div class="article-container-right post-container">
+            <div>
+                <img src="images/he-3/unsweetend hazelnut.png" class="article-top-right movie-image">
+            </div>
+            <div class="p-25px">
+                <div class="background-article-pink p-25px center-vertical center-vertical-mobile">
+                    <b>Key Benefits:</b>
+                    <p class="mt-0">Can boost protection from cellular damage, helps reduce the risk of cardiovascular disease, and aids in improving blood sugar levels.</p>
+                    <b>Great for everyday use in:</b>
+                    <p class="mt-0">iced coffee, smoothies, and cereal (hot and cold)</p>
+                    <b>Unique recipe to try:</b>
+                    <p class="mt-0">Apple Pie Fudge Cups </p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="clothes-article-title-container">
+            <span class="clothes-article-title">&#111; RECIPES: Apple Pie Fudge Cups</span>
+        </div>
+        <hr>     
+
+        <hr>
+        <div class="clothes-article-title-container">
+            <small class="clothes-article-title-small">Serving Size: </small>
+            <span class="clothes-article-title-small">12 CUPS</span>
+        </div>
+        <hr class="mb-0">
+        
+        <div class="clothes-article-title-container">
+            <div class="flex-container post-container">
+                <div class="border-right-1px-solid-black  border-none-mobile">
+                    <div>
+                        <img src="images/he-3/Cauliflower alfredo.jpg">
+                        <p><strong>Ingredients : </strong></p>
+                        <p>
+                            1 cup Elmhurst Unsweetened Milked Hazelnuts<br>
+                            1 cup apples, chopped<br>
+                            1/2 cup coconut oil, melted (plus a<br> little extra to bake the apples in)<br>
+                            3 tablespoons maple syrup<br>
+                            2 teaspoons cinnamon
+                        </p>
+                    </div>
+                </div>
+                <div class="pl-25px p-0-mobile">
+                    <hr class="mobile-image">
+                    <div>
+                        <p><strong>Instructions :</strong></p>
+                        <ol>
+                            <li class="color-light-grey"><p>Preheat the oven to 400° F. While preheating, chop 1 cup of apples and toss in coconut oil. Spread the apples on a baking sheet, and bake for 30-45 minutes.</p></li>
+                            <li class="color-light-grey"><p>Once the apples have cooled, add them and the rest of the ingredients to a blender. Blend until completely combined.</p></li>
+                            <li class="color-light-grey"><p>Pour the mixture into a mini muffin pan and freeze for 30 minutes or until firm.</p></li>
+                            <li class="color-light-grey"><p>Remove from freezer and if desired, drizzle with peanut butter, caramel, or other topping of choice.</p></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="mt-0">
+        <hr>
+        
+        <div class="clothes-article-title-container color-article-purple w-90" style="text-align: center;">
+            <h3 class="thats-all">
+                THATS ALL!<br>
+                WE HOPE THAT THIS ARTICLE WILL MAKE A BENEFIT<br>
+                TO ALL OF YOU GUYS...
+            </h3>
+            <small>
+                Oh and plus, please tag us on instagram if you ever make one of these recipes!<br>
+                We would love to see it from you guys.<br><br>
+                See u in the next articles !
+            </small>
+        </div>
+    </div>
+
+
+    <div class="px-75px background-hint-of-red pb-50px pt-25px border-top-1px-solid-black more-from-header-container">
+        <div class="flex-container align-item-end">
+            <div class="block-container">
+                <h1 class="more-from-header">MORE FROM BEAUTE</h1>
+                
+                <a href="ls-2.html">
+                    <div class="position-relative image-caption">
+                        <img class="image-fluid web-image" src="images/square-ls-2.jpg">
+                        <h4>Read More</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="block-container pl-4 web-image more-from-text-container">
+                <a href="ls-2.html">
+                    <h3>LIFE + STYLE</h3>
+                    <h2>A GUIDE TO YOUR Skincare<br><i>Product's Shelf Life</i></h2>
+                    <h4>Literally.. Stay FRESH.</h4>
+                </a>
+                <br>
+                <div class="flex-container">
+                    <small class="post-share">SHARE</small>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-square"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pr-75px background-hint-of-red border-top-1px-solid-black pl-25px more-from-container border-top-2px-solid-white-mobile">
+        <div class="flex-container post-container">
+            <div class="flex-container pb-50px pt-25px align-item-end border-right-1px-solid-black pl-50px more-from-container">
+                <a href="he-3.html">
+                    <div class="position-relative image-caption"> 
+                        <img src="images/square-he-3.jpg" class="image-fluid">
+                        <h4>Read More</h4>
+                    </div>
+                </a>
+                <div class="block-container pl-4 more-from-text-container">
+                    <a href="he-3.html">
+                        <h3>HOME + ENTERTAINING</h3>
+                        <h2><i>How To Choose Your</i><br>PLANT - BASED MILK</h2>
+                        <h4>Plus, three unexpected recipes</h4>
+                    </a>
+                    <br>
+                    <div class="flex-container">
+                        <small class="post-share">SHARE</small>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-facebook-square"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-container pb-50px pt-25px align-item-end pl-50px more-from-container">
+                <a href="he-2.html">
+                    <div class="position-relative image-caption"> 
+                        <img src="images/square-he-2.jpg" class="image-fluid">
+                        <h4>Read More</h4>
+                    </div>
+                </a>
+                <div class="block-container pl-4 more-from-text-container">
+                    <a href="he-2.html">
+                        <h3>HOME + ENTERTAINING</h3>
+                        <h2><i>Your Holiday<br></i>MOVIE GUIDE</h2>
+                        <h4>Team Beaute Shares Their<br> Favorite Films</h4>
+                    </a>
+                    <br>
+                    <div class="flex-container">
+                        <small class="post-share">SHARE</small>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-facebook-square"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="web-footer">
+        <div class="flex-container pl-75px">
+            <ul>
+                <li><strong>CONTACT US</strong></li>
+                <li>+62 8117 2098</li>
+                <li>Beaute@gmail.com</li>
+            </ul>
+            
+            <ul>
+                <li><strong>ABOUT</strong></li>
+                <li>Our Philosophy</li>
+            </ul>
+        </div>
+        <a href="/index.html" class="logo">
+            BEAUTE
+        </a>
+        <div class="flex-container social-media-container">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-square"></i>
+        </div>
+    </footer>
+    <footer class="mobile-footer">
+        <a href="/index.html" class="logo">
+            BEAUTE
+        </a>
+        <div class="flex-container social-media-container">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-square"></i>
+        </div>
+        <div>
+            <ul>
+                <li><strong>ABOUT</strong></li>
+                <li>Our Philosophy</li>
+            </ul>
+            <ul>
+                <li><strong>CONTACT US</strong></li>
+                <li>+62 8117 2098</li>
+                <li>Beaute@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
